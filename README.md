@@ -18,7 +18,7 @@ A aplicação simula um sistema de pedidos online de pratos típicos da culinár
 - `id` (auto gerado)
 - `nome` (string)
 - `usuario` (e-mail)
-- `foto` (URL opcional)
+- `foto` (URL opciona)
 - `senha` (string)
 
 ### ✅ Categoria
@@ -30,7 +30,7 @@ A aplicação simula um sistema de pedidos online de pratos típicos da culinár
 - `nome` (string)
 - `descricao` (string)
 - `preco` (decimal)
-- `foto` (string)
+- `qtd_disp` (inteiro)
 - `categoria` (muitos-para-um)
 - `usuario` (muitos-para-um)
 
