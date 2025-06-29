@@ -23,6 +23,7 @@ A aplicação simula um sistema de pedidos online de pratos típicos da culinár
 
 ### ✅ Categoria
 - `id` (auto gerado)
+- `categoria` (string)
 - `descricao` (string)
 
 ### ✅ Produto
