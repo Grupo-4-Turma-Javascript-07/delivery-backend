@@ -38,6 +38,12 @@ export class UsuarioController {
     return this.usuarioService.create(usuario);
   }
 
+  @Post('/login')
+  @HttpCode(HttpStatus.OK)
+  login(@Body() body: { email: string; senha: string }): Promise<Usuario> {
+    return this.usuarioService.login(body.email, body.senha);
+  }
+
   @Put()
   @HttpCode(HttpStatus.OK)
   update(@Body() usuario: Usuario): Promise<Usuario> {

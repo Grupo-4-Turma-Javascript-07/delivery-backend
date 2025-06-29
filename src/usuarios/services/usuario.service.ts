@@ -1,7 +1,9 @@
 import {
+  BadRequestException,
   ConflictException,
   Injectable,
   NotFoundException,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, Repository } from 'typeorm';
@@ -69,6 +71,20 @@ export class UsuarioService {
     await this.findById(id);
 
     return await this.usuarioRepository.delete(id);
+  }
+
+  async login(email: string, senha: string): Promise<Usuario> {
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      throw new BadRequestException('Formato de e-mail inválido');
+    }
+
+    const usuario = await this.findByEmail(email);
+
+    if (usuario.senha !== senha) {
+      throw new UnauthorizedException('Senha incorreta');
+    }
+
+    return usuario;
   }
 
   private async verificarEmailDuplicado(
