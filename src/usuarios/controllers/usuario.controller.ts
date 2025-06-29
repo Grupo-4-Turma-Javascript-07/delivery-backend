@@ -1,6 +1,3 @@
-// login -> get findbyemail if email e senha ===
-// registro
-
 import {
   Body,
   Controller,
