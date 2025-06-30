@@ -1,6 +1,7 @@
 import {
   IsEmail,
   IsNotEmpty,
+  IsOptional,
   IsString,
   Matches,
   MaxLength,
@@ -30,6 +31,7 @@ export class Usuario {
   @Column({ length: 255, nullable: false, unique: true })
   email: string;
 
+  @IsOptional()
   @MaxLength(255, { message: 'O link da foto excede o tamanho permitido' })
   @Column({ length: 255, nullable: true })
   foto?: string;
