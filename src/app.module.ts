@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Categoria } from './Categoria/entities/categoria.entity';
-import { CategoriaModule } from './Categoria/categoria.module';
+import { Usuario } from './usuarios/entities/usuario.entity';
+import { UsuarioModule } from './usuarios/usuario.module';
 
 @Module({
   imports: [
@@ -10,14 +10,14 @@ import { CategoriaModule } from './Categoria/categoria.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'Pdg@@2022',
+      password: 'root',
       database: 'db_delivery',
-      entities: [Categoria],
+      entities: [Usuario],
       synchronize: true,
     }),
-    CategoriaModule,
+    UsuarioModule,
   ],
   controllers: [],
-  providers: [], 
+  providers: [],
 })
 export class AppModule {}
