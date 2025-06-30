@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { Not, Repository } from 'typeorm';
 import { Produto } from '../entity/produto.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 
@@ -41,5 +41,17 @@ export class ProdutoService {
   async delete(id: number): Promise<void> {
     await this.findById(id);
     await this.produtoRepository.delete(id);
+  }
+
+  async recomendarProduto(id: number): Promise<Produto[]> {
+    return await this.produtoRepository.find({
+      where: {
+        usuario: {
+          id: Not(id),
+        },
+      },
+      order: { id: 'DESC' },
+      take: 5,
+    });
   }
 }

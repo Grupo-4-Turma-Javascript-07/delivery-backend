@@ -49,4 +49,10 @@ export class ProdutoController {
   delete(id: number): Promise<void> {
     return this.produtoService.delete(id);
   }
+
+  @Get('recomendados/:id')
+  @HttpCode(HttpStatus.OK)
+  recomendarProduto(@Param('id', ParseIntPipe) id: number): Promise<Produto[]> {
+    return this.produtoService.recomendarProduto(id);
+  }
 }
