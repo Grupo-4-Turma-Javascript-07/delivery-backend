@@ -25,6 +25,9 @@ export class Produto {
   @Column({ length: 255, nullable: false })
   descricao: string;
 
+  @Column({ length: 255, nullable: true })
+  foto: string;
+
   @ManyToOne(() => Usuario, (usuario) => usuario.produto, { eager: true })
   @JoinColumn({ name: 'usuarioId' })
   usuario: Usuario;
