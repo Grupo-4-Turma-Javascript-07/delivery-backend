@@ -2,7 +2,7 @@
 
 Este projeto faz parte do **Desafio 2 – Backend** do Projeto Integrador Generation Brasil, com o objetivo de implementar uma plataforma de delivery focada na culinária brasileira. O backend foi desenvolvido utilizando **NestJS**, com três entidades relacionadas e funcionalidades completas de CRUD.
 
-🔗 Repositório: [https://github.com/Grupo-4-Turma-Javascript-07/delivery-backend](https://github.com/Grupo-4-Turma-Javascript-07/delivery-backend)
+🔗 Repositório do FrontEnd: [Acesse aqui](https://github.com/Grupo-4-Turma-Javascript-07/delivery-frontend)
 
 ---
 
